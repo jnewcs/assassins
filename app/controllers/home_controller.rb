@@ -42,7 +42,7 @@ class HomeController < ApplicationController
         render :text => result   
     end
     
-    def reset
+    def reset_all
         allPlayers = Assassin.all
         allPlayers.each do |player|
             player.last_kill = Time.new

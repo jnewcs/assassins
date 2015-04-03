@@ -3,11 +3,11 @@
     <div class="row">
         <% count = 1 %>
         <% @final.each do |assassin|%>
-            <div class="col-lg-3">
+            <div class="col-lg-3 col-sm-4">
                 <% if assassin.killed == 0  %>
                     <div class="assassin-card assassin-card-active" id="container-<%=count.to_s%>">
-                        <h4 class="text-centered"><%=count.to_s%></h4>
-                        <h5 class="text-centered"><%=assassin.name.to_s%></h5>
+                        <h4 class="text-centered id"><%=count.to_s%></h4>
+                        <h5 class="text-centered name"><%=assassin.name.to_s%></h5>
                         <div class="black-box">
                             <h5 class="text-centered hour-header">Hours Left</h5>
                             <h5 class="text-centered"><%= (24.0-(Time.new - assassin.last_kill)/(60*60)).round(3) %></h5>
@@ -16,8 +16,8 @@
                     </div>
                 <% else %>
                     <div class="assassin-card assassin-card-killed" id="container-<%=count.to_s%>">
-                        <h4 class="text-centered"><%=count.to_s%></h4>
-                        <h5 class="text-centered"><%=assassin.name.to_s%></h5>
+                        <h4 class="text-centered id id-killed"><%=count.to_s%></h4>
+                        <h5 class="text-centered name name-killed"><%=assassin.name.to_s%></h5>
                         <div class="action-button revive-button" id="action-button-<%=count.to_s%>">Revive</div>
                     </div>
                 <% end %>

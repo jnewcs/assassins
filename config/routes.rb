@@ -15,7 +15,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   resources :home do 
     get 'switch',on: :collection  
-    get 'reset', on: :collection
+    get 'reset_all', on: :collection
   end
 
   # Example resource route with options:

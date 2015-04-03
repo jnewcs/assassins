@@ -42,17 +42,36 @@ label {
 }
 
 .assassin-card {
-    padding: 10px;
-    border: 1px solid #333;
-    margin: 10px;
-    min-height: 220px;
-    border-radius: 4px;
+    position: relative;
+    padding: 0px;
+    border: 1px solid #444;
+    display: block;
+    margin: 10px auto;
+    max-width: 250px;
+    min-height: 175px;
+}
+
+.id {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    border-right: 1px solid #444;
+    border-bottom: 1px solid #444;
+    padding: 3px 7px;
+    margin: 0px;
+    color: white;
+    background-color: #444;
+}
+
+.name {
+    border-bottom: 1px solid #444;
+    padding-bottom: 5px;
+    margin-top: 5px;
 }
 
 .assassin-card-killed {
-    color: white;
-    border: 1px solid white;
-    background-color: rgb(195, 10, 10);
+    color: #333;
+    opacity: .5;
 }
 
 .action-button {
@@ -62,22 +81,14 @@ label {
 
 .black-box {
     color: white;
-    background-color: #333;
+    background-color: #444;
     padding: 3px;
-}
-
-.kill-button {
-    border-top: 1px solid #333;
 }
 
 .kill-button:hover {
     cursor: pointer;
-    background-color: rgb(195, 10, 10);
+    background-color: rgb(157, 8, 8);
     color: white;
-}
-
-.revive-button {
-    border-top: 1px solid white;
 }
 
 .revive-button:hover {
@@ -87,6 +98,5 @@ label {
 }
 
 .hour-header {
-    padding: 10px;
-    border-top: 1px  solid #333;
+    padding: 5px;
 }
