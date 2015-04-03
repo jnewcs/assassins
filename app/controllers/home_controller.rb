@@ -41,4 +41,13 @@ class HomeController < ApplicationController
         previous.save(:validate => false)
         render :text => result   
     end
+    
+    def reset
+        allPlayers = Assassin.all
+        allPlayers.each do |player|
+            player.last_kill = Time.new
+            player.save(:validate => false)
+        end
+        redirect_to :controller => :home, :action => :index
+    end
 end

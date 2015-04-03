@@ -11,14 +11,8 @@ class Assassin < ActiveRecord::Base
             if(killed == 0) 
                 break
             end
-            puts "Current ID before update"
-            puts currentID
             currentID = Assassin.updateID(currentID)
-            puts "Current ID after update"
-            puts currentID 
         end
-        puts "Dirk is here"
-        puts currentID
         return Assassin.find(currentID.to_i)
     end
     
