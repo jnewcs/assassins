@@ -25,13 +25,7 @@ class HomeController < ApplicationController
     def switch
         query = params[:query].downcase
         assassinID = params[:id]
-        previousID = 0
-        if assassinID.to_i == 1
-            previousID = Assassin.all.length - 1
-        else 
-            previousID = assassinID.to_i - 1
-        end
-        previous = Assassin.find(previousID)
+        previous = Assassin.findPrevious(assassinID)
         assassin = Assassin.find(assassinID)
         result = ""
         if query == "revive"
