@@ -100,3 +100,13 @@ label {
 .hour-header {
     padding: 5px;
 }
+
+@media (max-width: 767px) {
+    .navbar-collapse {
+        margin-top: 50px !important;
+    }
+    
+    li > a {
+        text-align: center;    
+    }
+}
