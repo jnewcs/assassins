@@ -1,0 +1,33 @@
+<div class="container">
+    <h2  class="text-centered page-header">Assassin Assignments</h2>
+    <div class="row">
+        <% count = 1 %>
+        <% @final.each do |assassin|%>
+            <div class="col-lg-3">
+                <% if assassin.killed == 0  %>
+                    <div class="assassin-card assassin-card-active" id="container-<%=count.to_s%>">
+                        <h4 class="text-centered"><%=count.to_s%></h4>
+                        <h5 class="text-centered"><%=assassin.name.to_s%></h5>
+                        <div class="black-box">
+                            <h5 class="text-centered hour-header">Hours Left</h5>
+                            <h5 class="text-centered"><%= (24.0-(Time.new - assassin.last_kill)/(60*60)).round(3) %></h5>
+                        </div>
+                        <div class="action-button kill-button" id="action-button-<%=count.to_s%>">Assassinate</div>
+                    </div>
+                <% else %>
+                    <div class="assassin-card assassin-card-killed" id="container-<%=count.to_s%>">
+                        <h4 class="text-centered"><%=count.to_s%></h4>
+                        <h5 class="text-centered"><%=assassin.name.to_s%></h5>
+                        <div class="action-button revive-button" id="action-button-<%=count.to_s%>">Revive</div>
+                    </div>
+                <% end %>
+                <script type="text/javascript">
+                    //<![CDATA[
+                        new Switch("action-button-<%=count.to_s%>", "container-<%=count.to_s%>", "<%=assassin.id%>", "GET", "/home/switch?query=");
+                    //]]>
+                </script>
+            </div>
+            <% count = count + 1 %>
+        <% end %>
+    </div>
+</div>
