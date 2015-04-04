@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     get 'reset_all', on: :collection
     get 'pre_reset', on: :collection
     get 'add_hours', on: :member
+      
+    get 'pre_change_name', on: :member
+    post :change_name, on: :member
   end
 
   # Example resource route with options:

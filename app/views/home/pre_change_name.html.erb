@@ -1,0 +1,10 @@
+<div class="container">
+    <h2  class="text-centered page-header">Change Name</h2>
+    <div class="row">
+        <%= form_for @assassin, method: :post, url: {action: :change_name} do |form| %>  
+            <%= form.text_field :name, :placeholder => @assassin.name %> 
+            <%= form.submit "Update", :class => "btn btn-primary" %>
+        <%end%>
+    </div>
+</div>
+        

@@ -60,4 +60,17 @@ class HomeController < ApplicationController
         end
         redirect_to :controller => :home, :action => :index
     end
+    
+    def pre_change_name
+        id = params[:id]
+        @assassin = Assassin.find(id)
+    end
+    
+    def change_name
+        id = params[:id]
+        @assassin = Assassin.find(id)
+        @assassin.name = params[:assassin][:name]
+        @assassin.save(:validate => false)
+        redirect_to :controller => :home, :action => :index
+    end
 end

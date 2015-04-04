@@ -8,6 +8,7 @@
                     <div class="assassin-card assassin-card-active" id="container-<%=count.to_s%>">
                         <h4 class="text-centered id"><%=count.to_s%></h4>
                         <h5 class="text-centered name"><%=assassin.name.to_s%></h5>
+                        <a href="/home/<%=assassin.id.to_s%>/pre_change_name" class="edit"></a>
                         <div class="black-box">
                             <h5 class="text-centered hour-header">Hours Left</h5>
                             <h5 class="text-centered"><%= (24.0-(Time.new - assassin.last_kill)/(60*60)).round(3) %></h5>

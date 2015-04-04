@@ -26,6 +26,7 @@ form {
 input {
     display: block;
     margin: 5px auto !important;
+    padding: 10px !important;
 }
 
 label {
@@ -125,4 +126,14 @@ a:focus {
     margin: 15px auto !important;
     display: block !important;
     max-width: 100px !important;
+}
+
+.edit {
+    position: absolute;
+    right: 8px;
+    top: 3px;
+    width: 16px;
+    height: 16px;
+    background-image: url(asset_path('pencil.png'));
+    background-size: cover;
 }
