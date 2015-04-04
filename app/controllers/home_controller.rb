@@ -50,4 +50,14 @@ class HomeController < ApplicationController
         end
         redirect_to :controller => :home, :action => :index
     end
+    
+    def add_hours
+        allPlayers = Assassin.all
+        id = params[:id]
+        allPlayers.each do |player|
+            player.last_kill =  player.last_kill + id.to_i.hours
+            player.save(:validate => false)
+        end
+        redirect_to :controller => :home, :action => :index
+    end
 end

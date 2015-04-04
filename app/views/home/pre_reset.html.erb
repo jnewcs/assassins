@@ -1,0 +1,25 @@
+<div class="container">
+    <h2  class="text-centered page-header">Reset Center</h2>
+    <div class="row">
+        <div  class="col-lg-6">
+            <div class="reset-box">
+                <h4 class="text-centered">Set Clock to 24 Hours: All</h4>
+                <%= link_to('Reset', reset_all_home_index_path, :class => "btn btn-primary") %>
+            </div>
+        </div>
+        
+        <div  class="col-lg-6">
+            <div class="reset-box">
+                <h4 class="text-centered">Add 6 hours: All</h4>
+                <%= link_to('Add Six', {:controller => :home, :action => :add_hours, :id => 6}, :class => "btn btn-primary") %>
+            </div>
+        </div>
+        
+        <div class="col-lg-6">
+            <div class="reset-box">
+                <h4 class="text-centered">Add 2 hours: All</h4>
+                <%= link_to('Add Two', {:controller => :home, :action => :add_hours, :id => 2}, :class => "btn btn-primary") %>
+            </div>
+        </div>
+    </div>
+</div>

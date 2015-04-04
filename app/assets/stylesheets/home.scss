@@ -110,3 +110,19 @@ label {
         text-align: center;    
     }
 }
+
+a:focus {
+    outline: inherit !important;
+}
+
+.reset-box {
+    background-color: white;
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.btn-primary {
+    margin: 15px auto !important;
+    display: block !important;
+    max-width: 100px !important;
+}

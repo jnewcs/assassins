@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   resources :home do 
     get 'switch',on: :collection  
     get 'reset_all', on: :collection
+    get 'pre_reset', on: :collection
+    get 'add_hours', on: :member
   end
 
   # Example resource route with options:
