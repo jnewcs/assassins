@@ -3,7 +3,6 @@
     this.button = document.getElementById(buttonID);
     this.container = document.getElementById(containerID);
     this.assassinID = aID;
-    console.log(this.assassinID);
     this.method = method;
     this.url = url;
 

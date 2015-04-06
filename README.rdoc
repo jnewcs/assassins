@@ -1,28 +1,26 @@
-== README
+Rails 4.2.1 with Ruby 2.1.5 application (hosted on Heroku)
+that helps manage the game assassins. The application
+allows an administrator to keep track of the order of 
+the game as well as the remaining time each participant 
+has to eliminate their next target.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+-------------------
 
-Things you may want to cover:
+Application relies on the Devise gem to manage the 
+administrator login process. The administrator account 
+is created in a migration called 'create_admin' where 
+the password is stored in an environment variable stored 
+on a local machine in a file called local_env.yml. This 
+file is located in the /config directory and is listed
+in the .gitignore file.
 
-* Ruby version
+--------------------
 
-* System dependencies
+The database that stores all player information is POSTGRESQL.
 
-* Configuration
+--------------------
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Basic rules of assassins:
+1) Each participant is given a water gun
+2) Each participant has 24 hours to eliminate their target
+3) After a successful assassination, player get new assignment 

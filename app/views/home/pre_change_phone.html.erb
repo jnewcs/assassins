@@ -1,0 +1,9 @@
+<div class="container">
+    <h2  class="text-centered page-header">Change Phone - <%= @assassin.name %></h2>
+    <div class="row">
+        <%= form_for @assassin, method: :post, url: {action: :change_phone} do |form| %>  
+            <%= form.text_field :phone, :placeholder => @assassin.phone %> 
+            <%= form.submit "Update", :class => "btn btn-primary" %>
+        <%end%>
+    </div>
+</div>

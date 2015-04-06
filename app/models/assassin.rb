@@ -1,4 +1,10 @@
 class Assassin < ActiveRecord::Base
+    
+    def time_left
+        # Default time to complete assignment is 24 hours
+        (24.0-(Time.new - last_kill)/(60*60)).round(3)    
+    end
+    
     def self.activeAssassins(total)
         return Assassin.first(total)
     end

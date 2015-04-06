@@ -1,0 +1,44 @@
+<h2  class="text-centered page-header">
+    Assassin Assignments: (<%= alive %> Survivors)
+</h2>
+<div class="row">
+    <% count = 1 %>
+    <% all.each do |a|%>
+        <div class="col-lg-3 col-sm-4">
+            <% if a.killed == 0  %>
+                <div class="assassin-card assassin-card-active" id="container-<%=count.to_s%>">
+                    <h4 class="text-centered id"><%=count.to_s%></h4>
+                    <h5 class="text-centered name">
+                        <%=a.name.to_s%>
+                        <a href="/home/<%=a.id.to_s%>/pre_change_name" class="edit"></a>
+                    </h5>
+                    <div class="black-box">
+                        <h5 class="text-centered hour-header">Hours Left</h5>
+                        <h5 class="text-centered">
+                            <%= (24.0-(Time.new - a.last_kill)/(60*60)).round(3) %>
+                        </h5>
+                        <a href="/home/<%=a.id.to_s%>/pre_change_time" class="edit edit-time"></a>
+                    </div>
+                    <div class="phone-box">
+                        <h5 class="text-centered"><%= a.phone %></h5>
+                        <a href="/home/<%=a.id.to_s%>/pre_change_phone" class="edit edit-phone">
+                        </a>
+                    </div>
+                    <div class="action-button kill-button" id="action-button-<%=count.to_s%>">Assasinate</div>
+                </div>
+            <% else %>
+                <div class="assassin-card assassin-card-killed" id="container-<%=count.to_s%>">
+                    <h4 class="text-centered id id-killed"><%=count.to_s%></h4>
+                    <h5 class="text-centered name name-killed"><%=a.name.to_s%></h5>
+                    <div class="action-button revive-button" id="action-button-<%=count.to_s%>">Revive</div>
+                </div>
+            <% end %>
+            <script type="text/javascript">
+                //<![CDATA[
+                    new Switch("action-button-<%=count.to_s%>", "container-<%=count.to_s%>", "<%=a.id%>", "GET", "/home/switch?query=");
+                //]]>
+            </script>
+        </div>
+        <% count = count + 1 %>
+    <% end %>
+</div>

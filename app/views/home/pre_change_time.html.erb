@@ -1,0 +1,11 @@
+<div class="container">
+    <h2  class="text-centered page-header">Change Time Left - <%= @assassin.name %></h2>
+    <div class="row">
+        <%= form_tag action: :change_time do |form|%>
+            <% time = @assassin.time_left %>
+            <h4 class="text-centered blue-text">Current Hours Left: <%=time%></h4>
+            <%= text_field_tag 'time' %>
+            <%= submit_tag "Update", :class => "btn btn-primary" %>
+        <% end %>
+    </div>
+</div>
